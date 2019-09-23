@@ -11,13 +11,13 @@ class Protocol : AppCompatActivity() {
         setContentView(R.layout.activity_protocol)
 
         var absoluteArrow = 0
-        var SerieNo = 0
-        var Serie = Array(3) {0}
+        var seriesNo = 0
+        var Series = Array(3) {0}
         var Total = Array(60) {0}
 
         fun writeTotalPoint() {
-            d("Guava", "the calculateTotal function has been called, SerieNo = " + SerieNo)
-            when (SerieNo) {
+            d("Guava", "the calculateTotal function has been called, SeriesNo = " + seriesNo)
+            when (seriesNo) {
                 0  -> Total1.text  = Total.sum().toString()
                 1  -> Total2.text  = Total.sum().toString()
                 2  -> Total3.text  = Total.sum().toString()
@@ -42,32 +42,32 @@ class Protocol : AppCompatActivity() {
         }
 
         fun writeSeriesPoint() {
-            d("Guava", "the calculatePoint function has been called, SerieNo = " + SerieNo)
+            d("Guava", "the calculatePoint function has been called, SeriesNo = " + seriesNo)
             for (arrow in 0..2) {
-                Serie[arrow] = Total[SerieNo * 3 + arrow]
+                Series[arrow] = Total[seriesNo * 3 + arrow]
             }
 
-            when (SerieNo) {
-                0  -> Points1.text  = Serie.sum().toString()
-                1  -> Points2.text  = Serie.sum().toString()
-                2  -> Points3.text  = Serie.sum().toString()
-                3  -> Points4.text  = Serie.sum().toString()
-                4  -> Points5.text  = Serie.sum().toString()
-                5  -> Points6.text  = Serie.sum().toString()
-                6  -> Points7.text  = Serie.sum().toString()
-                7  -> Points8.text  = Serie.sum().toString()
-                8  -> Points9.text  = Serie.sum().toString()
-                9  -> Points10.text = Serie.sum().toString()
-                10 -> Points11.text = Serie.sum().toString()
-                11 -> Points12.text = Serie.sum().toString()
-                12 -> Points13.text = Serie.sum().toString()
-                13 -> Points14.text = Serie.sum().toString()
-                14 -> Points15.text = Serie.sum().toString()
-                15 -> Points16.text = Serie.sum().toString()
-                16 -> Points17.text = Serie.sum().toString()
-                17 -> Points18.text = Serie.sum().toString()
-                18 -> Points19.text = Serie.sum().toString()
-                19 -> Points20.text = Serie.sum().toString()
+            when (seriesNo) {
+                0  -> Points1.text  = Series.sum().toString()
+                1  -> Points2.text  = Series.sum().toString()
+                2  -> Points3.text  = Series.sum().toString()
+                3  -> Points4.text  = Series.sum().toString()
+                4  -> Points5.text  = Series.sum().toString()
+                5  -> Points6.text  = Series.sum().toString()
+                6  -> Points7.text  = Series.sum().toString()
+                7  -> Points8.text  = Series.sum().toString()
+                8  -> Points9.text  = Series.sum().toString()
+                9  -> Points10.text = Series.sum().toString()
+                10 -> Points11.text = Series.sum().toString()
+                11 -> Points12.text = Series.sum().toString()
+                12 -> Points13.text = Series.sum().toString()
+                13 -> Points14.text = Series.sum().toString()
+                14 -> Points15.text = Series.sum().toString()
+                15 -> Points16.text = Series.sum().toString()
+                16 -> Points17.text = Series.sum().toString()
+                17 -> Points18.text = Series.sum().toString()
+                18 -> Points19.text = Series.sum().toString()
+                19 -> Points20.text = Series.sum().toString()
             }
         }
 
@@ -158,14 +158,14 @@ class Protocol : AppCompatActivity() {
 
         }
 
-        fun determinSeries(Arrow: Int) {
-            SerieNo = Arrow / 3
+        fun determineSeries(Arrow: Int) {
+            seriesNo = Arrow / 3
         }
 
         One.setOnClickListener {
             d("Guava", "The 'One' button has been pressed.")
             writeArrowPoint("1", absoluteArrow)
-            determinSeries(absoluteArrow)
+            determineSeries(absoluteArrow)
             Total[absoluteArrow] = 1
             writeSeriesPoint()
             writeTotalPoint()
@@ -173,7 +173,7 @@ class Protocol : AppCompatActivity() {
         Two.setOnClickListener {
             d("Guava", "The 'Two' button has been pressed.")
             writeArrowPoint("2", absoluteArrow)
-            determinSeries(absoluteArrow)
+            determineSeries(absoluteArrow)
             Total[absoluteArrow] = 2
             writeSeriesPoint()
             writeTotalPoint()
@@ -181,7 +181,7 @@ class Protocol : AppCompatActivity() {
         Three.setOnClickListener {
             d("Guava", "The 'Three' button has been pressed.")
             writeArrowPoint("3", absoluteArrow)
-            determinSeries(absoluteArrow)
+            determineSeries(absoluteArrow)
             Total[absoluteArrow] = 3
             writeSeriesPoint()
             writeTotalPoint()
@@ -189,7 +189,7 @@ class Protocol : AppCompatActivity() {
         Four.setOnClickListener {
             d("Guava", "The 'Four' button has been pressed.")
             writeArrowPoint("4", absoluteArrow)
-            determinSeries(absoluteArrow)
+            determineSeries(absoluteArrow)
             Total[absoluteArrow] = 4
             writeSeriesPoint()
             writeTotalPoint()
@@ -197,7 +197,7 @@ class Protocol : AppCompatActivity() {
         Five.setOnClickListener {
             d("Guava", "The 'Five' button has been pressed.")
             writeArrowPoint("5", absoluteArrow)
-            determinSeries(absoluteArrow)
+            determineSeries(absoluteArrow)
             Total[absoluteArrow] = 5
             writeSeriesPoint()
             writeTotalPoint()
@@ -205,7 +205,7 @@ class Protocol : AppCompatActivity() {
         Six.setOnClickListener {
             d("Guava", "The 'Six' button has been pressed.")
             writeArrowPoint("6", absoluteArrow)
-            determinSeries(absoluteArrow)
+            determineSeries(absoluteArrow)
             Total[absoluteArrow] = 6
             writeSeriesPoint()
             writeTotalPoint()
@@ -213,7 +213,7 @@ class Protocol : AppCompatActivity() {
         Seven.setOnClickListener {
             d("Guava", "The 'Seven' button has been pressed.")
             writeArrowPoint("7", absoluteArrow)
-            determinSeries(absoluteArrow)
+            determineSeries(absoluteArrow)
             Total[absoluteArrow] = 7
             writeSeriesPoint()
             writeTotalPoint()
@@ -221,7 +221,7 @@ class Protocol : AppCompatActivity() {
         Eight.setOnClickListener {
             d("Guava", "The 'Eight' button has been pressed.")
             writeArrowPoint("8", absoluteArrow)
-            determinSeries(absoluteArrow)
+            determineSeries(absoluteArrow)
             Total[absoluteArrow] = 8
             writeSeriesPoint()
             writeTotalPoint()
@@ -229,7 +229,7 @@ class Protocol : AppCompatActivity() {
         Nine.setOnClickListener {
             d("Guava", "The 'Nine' button has been pressed.")
             writeArrowPoint("9", absoluteArrow)
-            determinSeries(absoluteArrow)
+            determineSeries(absoluteArrow)
             Total[absoluteArrow] = 9
             writeSeriesPoint()
             writeTotalPoint()
@@ -237,7 +237,7 @@ class Protocol : AppCompatActivity() {
         Ten.setOnClickListener {
             d("Guava", "The 'Ten' button has been pressed.")
             writeArrowPoint("10", absoluteArrow)
-            determinSeries(absoluteArrow)
+            determineSeries(absoluteArrow)
             Total[absoluteArrow] = 10
             writeSeriesPoint()
             writeTotalPoint()
@@ -245,7 +245,7 @@ class Protocol : AppCompatActivity() {
         Cross.setOnClickListener {
             d("Guava", "The 'Cross' button has been pressed.")
             writeArrowPoint("X", absoluteArrow)
-            determinSeries(absoluteArrow)
+            determineSeries(absoluteArrow)
             Total[absoluteArrow] = 10
             writeSeriesPoint()
             writeTotalPoint()
@@ -253,7 +253,7 @@ class Protocol : AppCompatActivity() {
         Miss.setOnClickListener {
             d("Guava", "The 'Miss' button has been pressed.")
             writeArrowPoint("M", absoluteArrow)
-            determinSeries(absoluteArrow)
+            determineSeries(absoluteArrow)
             Total[absoluteArrow] = 0
             writeSeriesPoint()
             writeTotalPoint()
@@ -261,14 +261,14 @@ class Protocol : AppCompatActivity() {
         Next.setOnClickListener {
             d("Guava", "The 'Next' button has been pressed.")
             absoluteArrow += 1 % 59
-            d("Guava", "Varable 'Arrow' is now: " + absoluteArrow)
+            d("Guava", "Variable 'Arrow' is now: " + absoluteArrow)
         }
         Privious.setOnClickListener {
-            d("Guava", "The 'Privious' button has been pressed.")
+            d("Guava", "The 'Previous' button has been pressed.")
             if (absoluteArrow > 0) {
                 absoluteArrow -= 1
             }
-            d("Guava", "Varable 'Arrow' is now: " + absoluteArrow)
+            d("Guava", "Variable 'Arrow' is now: " + absoluteArrow)
         }
         Clear.setOnClickListener {
             d("Guava", "The 'Clear' Button has been pressed.")
